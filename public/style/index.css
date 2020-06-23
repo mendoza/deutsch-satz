@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app-container {
+  display: flex;
+  background-color: #d3d3d3;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh !important;
+  flex: 1;
+}
+
+#question-container {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+#fragen {
+  color: white;
+  flex: 1;
+  text-align: center;
+  word-break: keep-all;
+}
+
+#fragen > h1 {
+  margin: 5%;
+}
+
+#fragen-options {
+  margin: 2%;
+  padding: 10%;
+  width: 100%;
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  border: #d3d3d3 solid 2px;
+  border-radius: 10px;
+  color: white;
+  font-size: 2rem;
+  width: 100% !important;
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+  word-break: keep-all;
+}
+
+#row-complete {
+  border-radius: 10px;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 400ms;
+}
+
+.clickable:hover {
+  transform: scale(1.1);
+  transition: transform 400ms;
+}
+
+.wrong {
+  background-color: rgba(100, 0, 0, 0.8) !important;
+  font-size: 2rem;
+}
+
+.correct {
+  background-color: rgba(0, 100, 0, 0.8) !important;
+  font-size: 2rem;
+}
+
+#tip-container {
+  color: white !important;
+  flex: 1;
+  text-align: center;
+  word-break: keep-all;
+  padding: 2%;
+}
+
+.selected {
+  transform: scale(1.1);
+}
