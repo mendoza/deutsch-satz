@@ -39,6 +39,9 @@
     ],
     "no-return-assign": [
       "off"
+    ],
+    "no-nested-ternary": [
+      "off"
     ]
   }
 }

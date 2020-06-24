@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Button, Alert } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+} from "reactstrap";
 import { fragenList } from "./data";
 
 const App = () => {
@@ -12,14 +21,16 @@ const App = () => {
     },
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [points, setPoints] = useState(0);
   const [random, setRandom] = useState(0);
-  const [shouldShowTip, setShouldShowTip] = useState(false);
-  const [hasChoosen, setHasChoosen] = useState(false);
   const [choosen, setChoosen] = useState(-1);
+  const [shouldShowTip, setShouldShowTip] = useState(false);
+  const [shouldShowModal, setShouldShowModal] = useState(false);
+  const [hasChoosen, setHasChoosen] = useState(false);
   const [correct, setCorrect] = useState(false);
 
   useEffect(() => {
-    setFragens(fragenList.sort(() => 0.5 - Math.random()).slice(0, 5));
+    setFragens(fragenList.sort(() => 0.5 - Math.random()).slice(0, 10));
   }, [setCurrentIndex]);
 
   useEffect(() => {
@@ -42,15 +53,23 @@ const App = () => {
           <Row id="fragen-options">
             <Col xs="12" md="6" lg="6" className="option-container">
               <div
+                role="button"
+                tabIndex={0}
+                onKeyDown={() => {}}
                 onClick={() => {
                   if (!hasChoosen) {
                     setHasChoosen(true);
-                    setChoosen(0);
-                    setCorrect(random <= 0.5);
-                    setShouldShowTip(!(random <= 0.5));
-                    setInterval(() => {
+                    setChoosen(1);
+                    setCorrect(random > 0.5);
+                    setShouldShowTip(!(random > 0.5));
+                    if (random <= 0.5) setPoints(points + fragens[currentIndex].cost);
+                    setTimeout(() => {
+                      if (currentIndex === fragens.length - 1) {
+                        setShouldShowModal(true);
+                      } else {
+                        setCurrentIndex(currentIndex + 1);
+                      }
                       setShouldShowTip(false);
-                      setCurrentIndex(currentIndex + 1);
                       setHasChoosen(false);
                       setCorrect(false);
                       setChoosen(-1);
@@ -65,15 +84,25 @@ const App = () => {
             </Col>
             <Col xs="12" md="6" lg="6" className="option-container">
               <div
+                role="button"
+                tabIndex={0}
+                onKeyDown={() => {}}
                 onClick={() => {
                   if (!hasChoosen) {
                     setHasChoosen(true);
                     setChoosen(1);
                     setCorrect(random > 0.5);
                     setShouldShowTip(!(random > 0.5));
-                    setInterval(() => {
+                    if (random > 0.5) setPoints(points + fragens[currentIndex].cost);
+                    setTimeout(() => {
+                      if (currentIndex === fragens.length - 1) {
+                        setShouldShowModal(true);
+                        console.log("wenas2")
+
+                      } else {
+                        setCurrentIndex(currentIndex + 1);
+                      }
                       setShouldShowTip(false);
-                      setCurrentIndex(currentIndex + 1);
                       setHasChoosen(false);
                       setCorrect(false);
                       setChoosen(-1);
@@ -95,17 +124,33 @@ const App = () => {
                 </span>
                 {` ${fragens[currentIndex].why}`}
               </p>
-              <Button
-                onClick={() => {
-                  Alert("terminaste con esto gei <3");
-                }}
-                color="success">
-                Terminar y ver mi puntuacion
-              </Button>
             </Col>
           </Row>
         </Row>
       </Container>
+      <Modal isOpen={shouldShowModal} toggle={() => setShouldShowModal(!shouldShowModal)}>
+        <ModalHeader>Resultados</ModalHeader>
+        <ModalBody>
+          <p>{`Sacaste ${points}/${fragens.reduce((a, i) => a + i.cost, 0)}`}</p>
+        </ModalBody>
+        <ModalFooter>
+          <Button
+            color="primary"
+            onClick={() => {
+              setCurrentIndex(0);
+              setPoints(0);
+              setRandom(Math.random());
+              setChoosen(-1);
+              setShouldShowTip(false);
+              setShouldShowModal(false);
+              setHasChoosen(false);
+              setCorrect(false);
+              setFragens(fragenList.sort(() => 0.5 - Math.random()).slice(0, 10));
+            }}>
+            Volver a jugar
+          </Button>
+        </ModalFooter>
+      </Modal>
     </Container>
   );
 };
