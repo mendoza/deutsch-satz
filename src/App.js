@@ -59,7 +59,7 @@ const App = () => {
                 onClick={() => {
                   if (!hasChoosen) {
                     setHasChoosen(true);
-                    setChoosen(1);
+                    setChoosen(0);
                     setCorrect(random > 0.5);
                     setShouldShowTip(!(random > 0.5));
                     if (random <= 0.5) setPoints(points + fragens[currentIndex].cost);
