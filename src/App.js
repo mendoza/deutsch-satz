@@ -60,8 +60,8 @@ const App = () => {
                   if (!hasChoosen) {
                     setHasChoosen(true);
                     setChoosen(0);
-                    setCorrect(random > 0.5);
-                    setShouldShowTip(!(random > 0.5));
+                    setCorrect(random <= 0.5);
+                    setShouldShowTip(!(random <= 0.5));
                     if (random <= 0.5) setPoints(points + fragens[currentIndex].cost);
                     setTimeout(() => {
                       if (currentIndex === fragens.length - 1) {
@@ -97,8 +97,6 @@ const App = () => {
                     setTimeout(() => {
                       if (currentIndex === fragens.length - 1) {
                         setShouldShowModal(true);
-                        console.log("wenas2")
-
                       } else {
                         setCurrentIndex(currentIndex + 1);
                       }
