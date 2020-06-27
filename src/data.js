@@ -3,21 +3,21 @@ export default {};
 export const fragenList = [
   // 10 preguntas
   {
-    pregunta: "¿Como Pedirias unas papas fritas?",
+    pregunta: "¿Como pedirías  unas papas fritas?",
     correct: "Ich werde Pommes haben",
     wrong: "Ich wirst Pommes haben",
     why: 'wirst se usa cuando estamos hablando en "du"',
     cost: 10,
   },
   {
-    pregunta: "¿Como Pedirias una hamburguesa?",
+    pregunta: "¿Como pedirías  una hamburguesa?",
     correct: "Ich werde Hamburger haben",
     wrong: "Ich wirst Hamburger haben",
     why: 'wirst se usa cuando estamos hablando en "du"',
     cost: 10,
   },
   {
-    pregunta: "¿Como Pedirias unas alitas?",
+    pregunta: "¿Como pedirías  unas alitas?",
     correct: "Kann ich 12 Hühnerflügel haben?",
     wrong: "Kann ich habe 12 Hühnerflügel?",
     why: '"habe" debe estar al final de la oracion',
@@ -38,7 +38,7 @@ export const fragenList = [
     cost: 10,
   },
   {
-    pregunta: "¿Como Pedirias una barra de chocolate?",
+    pregunta: "¿Como pedirías  una barra de chocolate?",
     correct: "Kann ich eine Tafel Schokolade haben?",
     wrong: "Kann ich habe eine Tafel Schokolade?",
     why: "el verbo principal debe ir al final de la oracion",
@@ -139,9 +139,81 @@ export const fragenList = [
   {
     pregunta: "Welche der Pizza ist die teuerste",
     correct: "¿Cual es la pizza mas cara?",
-    wrong: "Cual es la pizza mas tostada",
+    wrong: "¿Cual es la pizza mas tostada?",
     why: 'La palabra teuerste quiere decir "mas cara"',
     cost: 10,
   },
   // 10 preguntas
+  {
+    pregunta: "Kann ich dazu Pommes hinzufügen?",
+    correct: "¿Puedo agregarle papas fritas?",
+    wrong: "¿puedo cambiar el tamaño de esas papa fritas?",
+    why: 'La oracion es una traduccionde "¿Puedo agregarle papas fritas?"',
+    cost: 10,
+  },
+  {
+    pregunta: "Como pedirías  para tu amigo y vos 2 frescos grandes",
+    correct: "Können wir zwei große Soda bekommen?",
+    wrong: "Kann wir zwei große Limonaden bekommen?",
+    why: 'Kann conjugado para "wir" debe escribirse "Können"',
+    cost: 10,
+  },
+  {
+    pregunta: "¿Como pedirías  el menu de postres?",
+    correct: "Kannst du mir die Desserts sagen?",
+    wrong: "Kannst du die Desserts sagen?",
+    why: "Estas pidiendo que te den el menu a vos, no que lo digan nada mas",
+    cost: 10,
+  },
+  {
+    pregunta: "Können wir zwei extra große Hamburger mitnehmen?",
+    correct: "Podemos llevar dos hamburguesas extra grandes?",
+    wrong: "Danos dos hamburguesas extra grandes",
+    why: "La oracion esta formulada como una pregunta hacia la persona que te atendio",
+    cost: 10,
+  },
+  {
+    pregunta: "¿Como pedirías  el papas fritas y una malteada?",
+    correct: "holst du mir ein paar Pommes und einen Milchshake?",
+    wrong: "kann du ein paar Pommes und einen Milchshake",
+    why:
+      "Las oraciones son muy distintas, la incorrecta dice que esa persona puede comer papas y una malteada",
+    cost: 10,
+  },
+  {
+    pregunta: "Wir werden 3 Pizza für uns bestellen",
+    correct: "vamos a pedir 3 pizzas para nosotros",
+    wrong: "ocupo 3 pizzas",
+    why: "La oracion esta formulada de la manera correcta, la incorrecta tendria muchas palabras",
+    cost: 10,
+  },
+  {
+    pregunta: "Kannst du ihr ein paar Snacks besorgen?",
+    correct: "¿Le podrias traer unos snacks?",
+    wrong: "Me podrias traer unos snacks",
+    why: 'La oracion esta hablando para "Ella"',
+    cost: 10,
+  },
+  {
+    pregunta: "Como le dirias al mesero que no estas listo",
+    correct: "Ich bin immer noch nicht bereit zu bestellen",
+    wrong: "Ich bin immer noch keine bereit zu bestellen",
+    why: "Keine solo se deberia usar cuando estas utilizando negando la existencia de algo",
+    cost: 10,
+  },
+  {
+    pregunta: "Kann ich Nachos mit Jalapeños, Ketchup, Mayo, Senfgurkenkäse haben?",
+    correct:
+      "¿Me podes dar unos nachos con jalapeños, ketchup, mayonesa, mostaza, queso y encurtido",
+    wrong: "dame unos nachos con todo",
+    why: "La oracion es completamente diferentes",
+    cost: 10,
+  },
+  {
+    pregunta: "¿Como pedirías  una baleada con todo?",
+    correct: "Kann ich eine Baleada mit allem haben?",
+    wrong: "Kann ich eine Baleada mit alle haben",
+    why: "La oracion esta formulada como una pregunta hacia la persona que te atendio",
+    cost: 10,
+  },
 ];
