@@ -73,7 +73,7 @@ const App = () => {
                       setHasChoosen(false);
                       setCorrect(false);
                       setChoosen(-1);
-                    }, 2500);
+                    }, 5000);
                   }
                 }}
                 className={`option clickable ${
@@ -106,7 +106,7 @@ const App = () => {
                       setHasChoosen(false);
                       setCorrect(false);
                       setChoosen(-1);
-                    }, 2500);
+                    }, 5000);
                   }
                 }}
                 className={`option clickable ${

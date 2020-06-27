@@ -1,5 +1,6 @@
 {
   "name": "deutsch-satz",
+  "homepage": "satz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
